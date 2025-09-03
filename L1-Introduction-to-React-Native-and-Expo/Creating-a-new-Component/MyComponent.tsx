@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { TouchableOpacity } from "react-native";
 
 /*
      
@@ -18,53 +17,66 @@ import { TouchableOpacity } from "react-native";
 
 // First we define the props that we want to pass to the component
 interface ComponentProps {
-    text: string;
+  text: string;
 }
 
 // We define the component as a function that takes in the props
 export default function MyComponent({ text }: ComponentProps) {
-
-    return (
-        <View>
-            <View style={styles.container}>
-
-                <Text style={styles.mainText}>
-                    The Original Hello World from MyComponent!
-                </Text>
-                <Text style={styles.textExample}>
-                    Below is the prop you passed:
-                </Text>
-                <Text style={styles.PropText}>
-                    {text}
-                </Text>
-            </View>
-        </View>
-    );
+  return (
+    <View style={styles.card}>
+      <Text style={styles.header}>MyComponent.tsx</Text>
+      <Text style={styles.textExample}>Below is the prop you passed:</Text>
+      <View style={styles.propHighlight}>
+        <Text style={styles.propText}>{text}</Text>
+      </View>
+    </View>
+  );
 }
 
-// Just styling. :)
 const styles = StyleSheet.create({
-
-    container: {
-        borderRadius: 25,
-        backgroundColor: 'green',
-        borderColor: 'black',
-        borderWidth: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20,
-    },
-    mainText: {
-        fontWeight: "bold",
-        fontSize: 25,
-        borderColor: "black",
-        textAlign: "center",
-
-    },
-    PropText: {
-        fontWeight: "bold",
-        fontSize: 25,
-        color: "lightgreen",
-        textAlign: "center",
-    },
+  header: {
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#000000ff",
+    textAlign: "center",
+    marginBottom: 12,
+  },
+  card: {
+    marginHorizontal: 20,
+    borderRadius: 16,
+    backgroundColor: "#fff",
+    paddingVertical: 28,
+    paddingHorizontal: 20,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#e0e0e0",
+    shadowColor: "#000",
+    shadowOpacity: 0.12,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 6,
+  },
+  textExample: {
+    fontSize: 15,
+    color: "#333",
+    marginBottom: 12,
+    textAlign: "center",
+  },
+  propHighlight: {
+    backgroundColor: "#f1f8e9",
+    borderRadius: 8,
+    paddingVertical: 14,
+    paddingHorizontal: 8,
+    marginTop: 4,
+    width: "100%",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#c5e1a5",
+  },
+  propText: {
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#388e3c",
+    textAlign: "center",
+  },
 });
