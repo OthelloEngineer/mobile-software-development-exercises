@@ -1,3 +1,4 @@
 # Ignore node_modules and .expo directories
 node_modules/
 .expo/
+.DS_Store
