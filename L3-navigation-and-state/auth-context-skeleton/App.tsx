@@ -5,35 +5,50 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import { useState } from "react";
 import { AuthProvider, useAuth } from "./AuthContext";
 
 export default function App() {
   return (
     /* TODO: Wrap with AuthProvider */
-    <LoginScreen />
+    <AuthProvider>
+      <LoginScreen />
+    </AuthProvider>
   );
 }
 
 function LoginScreen() {
   /* TODO: Use useAuth hook here */
+  const { user, login, logout } = useAuth();
+  const [username, setUsername] = useState("");
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Authentication Exercise</Text>
 
       {/* TODO: Show login status: "Logged in as: [user]" or "Not logged in" */}
-      <Text style={styles.status}>Status will appear here</Text>
+      <Text style={styles.status}>
+        {user ? `Logged in as: ${user}` : "Not logged in"}
+      </Text>
 
       {/* TODO: Add TextInput for username */}
-      <TextInput style={styles.input} placeholder="Enter username" />
+      <TextInput
+        style={styles.input}
+        placeholder="Enter username"
+        value={username}
+        onChangeText={setUsername}
+      />
 
       {/* TODO: Add login Button */}
-      <TouchableOpacity style={styles.loginButton} onPress={() => {}}>
+      <TouchableOpacity
+        style={styles.loginButton}
+        onPress={() => login(username)}
+      >
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
 
       {/* TODO: Add logout Button */}
-      <TouchableOpacity style={styles.logoutButton} onPress={() => {}}>
+      <TouchableOpacity style={styles.logoutButton} onPress={logout}>
         <Text style={styles.buttonText}>Logout</Text>
       </TouchableOpacity>
     </View>
