@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  View,
-  Image,
-  Text,
-  TouchableOpacity,
-  StyleSheet
-} from "react-native";
+import { View, Image, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // The expected response from the API
 type CarResponse = {
@@ -20,9 +14,7 @@ type CarResponse = {
   isAvailable: boolean;
 };
 
-
 export default function RandomCarCard() {
-  
   const [car, setCar] = useState<CarResponse | null>(null);
 
   const CAR_STORAGE_KEY = "persistedCar"; // Key for saving and loading data from AsyncStorage
@@ -56,7 +48,7 @@ export default function RandomCarCard() {
   const fetchCarData = async () => {
     try {
       const response = await axios.get(
-        "https://raw.githubusercontent.com/DanInDev/mobile-software-development-exercises/main/cars.json"
+        "https://raw.githubusercontent.com/OthelloEngineer/mobile-software-development-exercises/refs/heads/main/cars.json"
       );
       const randomCar =
         response.data[Math.floor(Math.random() * response.data.length)];
