@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -68,21 +69,21 @@ fun ProfileScreen(modifier: Modifier = Modifier) {
     ) {
         // Profile Picture in a Box
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .size(120.dp)
                 .background(Color.LightGray, CircleShape)
         ) {
             Image(
                 imageVector = Icons.Default.Person,
                 contentDescription = "Profile picture",
-                modifier = Modifier
+                modifier = modifier
                     .fillMaxSize()
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop
             )
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = modifier.height(16.dp))
 
         // Name with larger font size
         Text(
@@ -91,7 +92,7 @@ fun ProfileScreen(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = modifier.height(8.dp))
 
         // Bio/description
         Text(
@@ -99,7 +100,7 @@ fun ProfileScreen(modifier: Modifier = Modifier) {
             fontSize = 16.sp
         )
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = modifier.height(24.dp))
 
         // Buttons in a Row
         Row(
