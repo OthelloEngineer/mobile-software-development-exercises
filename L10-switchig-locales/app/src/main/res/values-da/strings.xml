@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lokaliserings Demo App</string>
+    <string name="friends">Venner</string>
+    <string name="description">Beskrivelse</string>
+    <string name="interests">Interesser</string>
+    <string name="greeting">Hej</string>
+    <string name="welcome">Velkommen til appen!</string>
+    <string name="goodbye">Farvel</string>
+    <string name="settings">Indstillinger</string>
+    <string name="profile">Profil</string>
+    <string name="messages">Beskeder</string>
+</resources>

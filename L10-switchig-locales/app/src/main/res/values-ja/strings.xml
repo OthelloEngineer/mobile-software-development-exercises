@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">ロケールデモアプリ</string>
     <string name="friends">友達</string>
-    <string name="app_name">アップの名前</string>
-    <string name="title_activity_screen">Yeah, I do not know that much japanese…</string>
-    <string name="description" >叙述</string>
-    <string name="interests" > きょうみ </string>
+    <string name="description">説明</string>
+    <string name="interests">興味</string>
+    <string name="greeting">こんにちは</string>
+    <string name="welcome">アプリへようこそ！</string>
+    <string name="goodbye">さようなら</string>
+    <string name="settings">設定</string>
+    <string name="profile">プロフィール</string>
+    <string name="messages">メッセージ</string>
 </resources>

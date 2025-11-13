@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aplicación de Demostración de Localización</string>
+    <string name="friends">Amigos</string>
+    <string name="description">Descripción</string>
+    <string name="interests">Intereses</string>
+    <string name="greeting">Hola</string>
+    <string name="welcome">¡Bienvenido a la aplicación!</string>
+    <string name="goodbye">Adiós</string>
+    <string name="settings">Configuración</string>
+    <string name="profile">Perfil</string>
+    <string name="messages">Mensajes</string>
+</resources>
